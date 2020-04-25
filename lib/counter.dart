@@ -5,7 +5,8 @@ part 'counter.g.dart';
 class Counter = _Counter with _$Counter;
 
 abstract class _Counter with Store {
-  /* Retirados para uso dos geradores de códigos
+  // Para uso sem mobx_codegen e build_runner (não compatíveis com WEB)
+/* class Counter {
   Counter() {
     increment = Action(_increment);
   }
@@ -17,8 +18,9 @@ abstract class _Counter with Store {
 
   void _increment() {
     _count.value++;
-  }
-  */
+  } */
+
+  //Para uso com mobx_codegen e build_runner (não compatíveis com WEB)
   @observable
   int count = 0;
 
@@ -26,5 +28,4 @@ abstract class _Counter with Store {
   void increment() {
     count++;
   }
-
 }
